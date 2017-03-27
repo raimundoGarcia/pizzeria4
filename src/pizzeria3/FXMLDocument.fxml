@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="paneBase" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="672.0" prefWidth="1394.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pizzeria3.FXMLDocumentController">
+   <children>
+      <Label layoutX="1.0" layoutY="110.0" prefHeight="66.0" prefWidth="194.0" text="  PIZZAS" textAlignment="CENTER">
+         <font>
+            <Font name="Segoe Script" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="56.0" layoutY="285.0" prefHeight="33.0" prefWidth="83.0" text="MASAS">
+         <font>
+            <Font name="Segoe Script" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="54.0" layoutY="354.0" text="TAMAÑO">
+         <font>
+            <Font name="Segoe Print" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="22.0" layoutY="472.0" text="INGREDIENTES">
+         <font>
+            <Font name="Segoe Script" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="precioFinal" layoutX="672.0" layoutY="613.0" prefHeight="27.0" prefWidth="62.0">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <SplitPane fx:id="panelPizzas" dividerPositions="0.5050505050505051" layoutX="206.0" layoutY="43.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="620.0" styleClass="panelPizzas" stylesheets="@pizzas1.css">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="97.0" prefWidth="659.0">
+               <children>
+                  <ToggleButton fx:id="pMargarita" layoutX="32.0" layoutY="16.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="pMargarita" stylesheets="@pizzas1.css">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="grupoPizza" />
+                     </toggleGroup>
+                  </ToggleButton>
+                  <ToggleButton fx:id="pProscuto" layoutX="184.0" layoutY="16.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="pProscuto" stylesheets="@pizzas1.css" toggleGroup="$grupoPizza" />
+                  <ToggleButton fx:id="pCuatroQuesos" layoutX="331.0" layoutY="16.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="pCuatroQuesos" stylesheets="@pizzas1.css" toggleGroup="$grupoPizza" />
+                  <ToggleButton fx:id="pBoloñesa" layoutX="474.0" layoutY="16.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="pBolognesa" stylesheets="@pizzas1.css" toggleGroup="$grupoPizza" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <ToggleButton fx:id="p4estaciones" layoutX="32.0" layoutY="11.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="p4estaciones" stylesheets="@pizzas1.css" toggleGroup="$grupoPizza" />
+                  <ToggleButton fx:id="pBBQ" layoutX="185.0" layoutY="11.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="pBBQ" stylesheets="@pizzas1.css" toggleGroup="$grupoPizza" />
+                  <ToggleButton fx:id="pMarinera" layoutX="332.0" layoutY="11.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="pMarinera" stylesheets="@pizzas1.css" toggleGroup="$grupoPizza" />
+                  <ToggleButton fx:id="pEmpresa" layoutX="475.0" layoutY="11.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="pEmpresa" stylesheets="@pizzas1.css" toggleGroup="$grupoPizza" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <Pane fx:id="panelMasas" layoutX="206.0" layoutY="254.0" prefHeight="95.0" prefWidth="620.0" styleClass="panelMasas" stylesheets="@pizzas1.css">
+         <children>
+            <ToggleButton fx:id="mNormal" layoutX="35.0" layoutY="15.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="mNormal" stylesheets="@pizzas1.css" text="Normal">
+               <toggleGroup>
+                  <ToggleGroup fx:id="masa" />
+               </toggleGroup>
+            </ToggleButton>
+            <ToggleButton fx:id="mFina" layoutX="187.0" layoutY="14.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="mFina" stylesheets="@pizzas1.css" text="Fina" toggleGroup="$masa" />
+            <ToggleButton fx:id="mIntegral" layoutX="334.0" layoutY="14.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="mIntegral" stylesheets="@pizzas1.css" text="Integral" toggleGroup="$masa" />
+            <ToggleButton fx:id="mRellena" layoutX="476.0" layoutY="15.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="mRellena" stylesheets="@pizzas1.css" text="Rellena" toggleGroup="$masa" />
+         </children>
+      </Pane>
+      <Pane fx:id="panelTamaño" layoutX="206.0" layoutY="352.0" prefHeight="36.0" prefWidth="620.0" styleClass="panelRadio" stylesheets="@pizzas1.css">
+         <children>
+            <RadioButton fx:id="rbInfantil" layoutX="66.0" layoutY="10.0" mnemonicParsing="false" onAction="#seleccion" text="Infantil">
+               <toggleGroup>
+                  <ToggleGroup fx:id="rbTamaños" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="rbPequeña" layoutX="202.0" layoutY="10.0" mnemonicParsing="false" onAction="#seleccion" text="Pequeña" toggleGroup="$rbTamaños" />
+            <RadioButton fx:id="rbMediana" layoutX="352.0" layoutY="10.0" mnemonicParsing="false" onAction="#seleccion" text="Mediana" toggleGroup="$rbTamaños" />
+            <RadioButton fx:id="rbFamiliar" layoutX="501.0" layoutY="10.0" mnemonicParsing="false" onAction="#seleccion" text="Familiar" toggleGroup="$rbTamaños" />
+         </children>
+      </Pane>
+      <SplitPane fx:id="panelIngredientes" dividerPositions="0.5" layoutX="206.0" layoutY="399.0" orientation="VERTICAL" prefHeight="179.0" prefWidth="620.0" styleClass="panelIngredientes" stylesheets="@pizzas1.css">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="48.0" prefWidth="166.0">
+               <children>
+                  <ToggleButton fx:id="iJamon" layoutX="33.0" layoutY="11.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="iJamon" stylesheets="@pizzas1.css" />
+                  <ToggleButton fx:id="iQueso" layoutX="185.0" layoutY="11.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="iQueso" stylesheets="@pizzas1.css" />
+                  <ToggleButton fx:id="iCebolla" layoutX="334.0" layoutY="11.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="iCebolla" stylesheets="@pizzas1.css" />
+                  <ToggleButton fx:id="iTomate" layoutX="474.0" layoutY="11.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="iTomate" stylesheets="@pizzas1.css" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <ToggleButton fx:id="iPollo" layoutX="33.0" layoutY="10.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="iPollo" stylesheets="@pizzas1.css" />
+                  <ToggleButton fx:id="iCarnePicada" layoutX="186.0" layoutY="10.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="iCarnePicada" stylesheets="@pizzas1.css" />
+                  <ToggleButton fx:id="iAceitunas" layoutX="332.0" layoutY="10.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="iAceitunas" stylesheets="@pizzas1.css" />
+                  <ToggleButton fx:id="iBBQ" layoutX="473.0" layoutY="10.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="iBBQ" stylesheets="@pizzas1.css" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <TitledPane fx:id="panelDetalles" animated="false" layoutX="838.0" layoutY="285.0" prefHeight="229.0" prefWidth="515.0" text="Detalles">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="203.0" prefWidth="517.0">
+               <children>
+                  <TextArea fx:id="precioIngredientes" editable="false" layoutX="449.0" layoutY="40.0" prefHeight="144.0" prefWidth="58.0" />
+                  <TextArea fx:id="textIngredientes" editable="false" layoutY="40.0" prefHeight="144.0" prefWidth="441.0" />
+                  <Label fx:id="textPizza" layoutX="8.0" layoutY="6.0" prefHeight="17.0" prefWidth="406.0" />
+                  <Label fx:id="textMasa" layoutX="8.0" layoutY="23.0" prefHeight="17.0" prefWidth="406.0" />
+                  <Label fx:id="textTamaño" layoutX="8.0" layoutY="182.0" prefHeight="17.0" prefWidth="406.0" />
+                  <Label fx:id="precioPizza" layoutX="458.0" layoutY="6.0" prefHeight="17.0" prefWidth="40.0" textAlignment="CENTER" />
+                  <Label fx:id="precioMasa" layoutX="458.0" layoutY="23.0" prefHeight="17.0" prefWidth="40.0" textAlignment="CENTER" />
+                  <Label fx:id="precioTamaño" layoutX="457.0" layoutY="181.0" prefHeight="17.0" prefWidth="43.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+      <Label layoutX="406.0" layoutY="613.0" prefHeight="27.0" prefWidth="121.0" text="PRECIO FINAL">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="labError" layoutX="607.0" layoutY="582.0" prefHeight="17.0" prefWidth="254.0" textFill="#fc0000" />
+      <Pane fx:id="logo" layoutX="19.0" prefHeight="126.0" prefWidth="157.0" styleClass="logo" stylesheets="@pizzas1.css" />
+      <Pane fx:id="logo2" layoutX="967.0" layoutY="52.0" prefHeight="213.0" prefWidth="261.0" styleClass="logo2" stylesheets="@pizzas1.css" />
+   </children>
+</AnchorPane>
