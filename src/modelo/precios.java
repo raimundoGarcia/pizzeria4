@@ -1,7 +1,13 @@
 package modelo;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.stream.Stream;
 
 public class precios {
 
@@ -56,19 +62,124 @@ public class precios {
         listaIngredientes.put("Carne picada", 1.50);
         listaIngredientes.put("Tomate natural", 0.50);
         listaIngredientes.put("Mozzarella", 1.00);
-        listaDescripcion.put("Margarita","Margarita (Salsa de tomate y mozzarella)                                  ");
-        listaDescripcion.put("3 Estaciones","3 Estaciones (Tomate, mozzarella, alcachofas, aceitunas, jamón, champiñon)");
-        listaDescripcion.put("BBQ","BBQ (Tomate, mozzarella, salsa barbacoa, pollo, carne picada, bacon)      ");
-        listaDescripcion.put("Bolognesa","Bolognesa (Tomate,Mozzarella, salsa bolognesa, Carne Picada)              ");
-        listaDescripcion.put("4 Quesos","4 Quesos (tomate, mozzarella, parmesano, queso azul, rulo de cabra)       ");
-        listaDescripcion.put("Fattore","Fattore (Tomate, mozzarella, jamón serrano, mozzarella di buffala, rucula)");
-        listaDescripcion.put("Marinera","Marinera (Salsa marinera, mozzarella, mejillones, gambas, calamares)      ");
-        listaDescripcion.put("Prosciutto","Prosciutto (Tomate, mozzarella, prosciutto, jamón cocido)                 ");
+        listaDescripcion.put("Margarita", "Margarita (Salsa de tomate y mozzarella)                                  ");
+        listaDescripcion.put("3 Estaciones", "3 Estaciones (Tomate, mozzarella, alcachofas, aceitunas, jamón, champiñon)");
+        listaDescripcion.put("BBQ", "BBQ (Tomate, mozzarella, salsa barbacoa, pollo, carne picada, bacon)      ");
+        listaDescripcion.put("Bolognesa", "Bolognesa (Tomate,Mozzarella, salsa bolognesa, Carne Picada)              ");
+        listaDescripcion.put("4 Quesos", "4 Quesos (tomate, mozzarella, parmesano, queso azul, rulo de cabra)       ");
+        listaDescripcion.put("Fattore", "Fattore (Tomate, mozzarella, jamón serrano, mozzarella di buffala, rucula)");
+        listaDescripcion.put("Marinera", "Marinera (Salsa marinera, mozzarella, mejillones, gambas, calamares)      ");
+        listaDescripcion.put("Prosciutto", "Prosciutto (Tomate, mozzarella, prosciutto, jamón cocido)                 ");
         listaTamaños.put("infantil", 0.5);
         listaTamaños.put("pequeña", 1.0);
         listaTamaños.put("mediana", 1.3);
         listaTamaños.put("familiar", 1.7);
 
     }
-}
 
+    private void cargarTipo() {
+        String primero="";
+        double segundo=-1;
+        try {
+            Path archivo = Paths.get("precioTipo.txt");
+            Files.lines(archivo);
+            Stream<String> datos = Files.lines(archivo);
+            Iterator<String> it = datos.iterator();
+            while (it.hasNext()) {
+                String linea = it.next();
+                String []trozos = linea.split(":");
+                for (String trozo : trozos) {
+                    primero=trozos[0];
+                    segundo=Double.parseDouble(trozos[1]);
+                }
+                listaPizzas.put(primero,segundo);
+            }
+        } catch (IOException ex) {
+            
+        }
+    }
+      private void cargarTamaño() {
+        String primero="";
+        double segundo=-1;
+        try {
+            Path archivo = Paths.get("precioTamaño.txt");
+            Files.lines(archivo);
+            Stream<String> datos = Files.lines(archivo);
+            Iterator<String> it = datos.iterator();
+            while (it.hasNext()) {
+                String linea = it.next();
+                String []trozos = linea.split(":");
+                for (String trozo : trozos) {
+                    primero=trozos[0];
+                    segundo=Double.parseDouble(trozos[1]);
+                }
+                listaTamaños.put(primero,segundo);
+            }
+        } catch (IOException ex) {
+            
+        }
+    }
+        private void cargarMasa() {
+        String primero="";
+        double segundo=-1;
+        try {
+            Path archivo = Paths.get("precioMasa.txt");
+            Files.lines(archivo);
+            Stream<String> datos = Files.lines(archivo);
+            Iterator<String> it = datos.iterator();
+            while (it.hasNext()) {
+                String linea = it.next();
+                String []trozos = linea.split(":");
+                for (String trozo : trozos) {
+                    primero=trozos[0];
+                    segundo=Double.parseDouble(trozos[1]);
+                }
+                listaMasas.put(primero,segundo);
+            }
+        } catch (IOException ex) {
+            
+        }
+    }
+          private void cargarIngredientes() {
+        String primero="";
+        double segundo=-1;
+        try {
+            Path archivo = Paths.get("precioIngredientes.txt");
+            Files.lines(archivo);
+            Stream<String> datos = Files.lines(archivo);
+            Iterator<String> it = datos.iterator();
+            while (it.hasNext()) {
+                String linea = it.next();
+                String []trozos = linea.split(":");
+                for (String trozo : trozos) {
+                    primero=trozos[0];
+                    segundo=Double.parseDouble(trozos[1]);
+                }
+                listaIngredientes.put(primero,segundo);
+            }
+        } catch (IOException ex) {
+            
+        }
+    }
+            private void cargarDescripciones() {
+        String primero="",segundo="";
+        
+        try {
+            Path archivo = Paths.get("listaDescripciones.txt");
+            Files.lines(archivo);
+            Stream<String> datos = Files.lines(archivo);
+            Iterator<String> it = datos.iterator();
+            while (it.hasNext()) {
+                String linea = it.next();
+                String []trozos = linea.split(":");
+                for (String trozo : trozos) {
+                    primero=trozos[0];
+                    segundo=trozos[1];
+                }
+                listaDescripcion.put(primero,segundo);
+            }
+        } catch (IOException ex) {
+            
+        }
+    }
+}
