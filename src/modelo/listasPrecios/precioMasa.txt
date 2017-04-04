@@ -1,0 +1,4 @@
+normal:0.5
+fina:1.0
+integral:1.5
+rellena:2.5

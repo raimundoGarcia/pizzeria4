@@ -1,0 +1,8 @@
+Margarita:Margarita (Salsa de tomate y mozzarella)                                  
+3 Estaciones:3 Estaciones (Tomate, mozzarella, alcachofas, aceitunas, jamón, champiñon)
+BBQ:BBQ (Tomate, mozzarella, salsa barbacoa, pollo, carne picada, bacon)      
+Bolognesa:Bolognesa (Tomate,Mozzarella, salsa bolognesa, Carne Picada)             
+4 Quesos:4 Quesos (tomate, mozzarella, parmesano, queso azul, rulo de cabra)       
+Fattore:Fattore (Tomate, mozzarella, jamón serrano, mozzarella di buffala, rucula)
+Marinera:Marinera (Salsa marinera, mozzarella, mejillones, gambas, calamares)      
+Prosciutto:Prosciutto (Tomate, mozzarella, prosciutto, jamón cocido)                 

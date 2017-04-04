@@ -1,0 +1,4 @@
+infantil:0.5
+pequeña:1.0
+mediana:1.3
+familiar:1.7

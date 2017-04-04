@@ -1,11 +1,14 @@
 package pizzeria3;
 
+import java.io.File;
 import java.net.URL;
+import java.nio.file.Path;
 import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.SplitPane;
@@ -15,8 +18,9 @@ import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.stage.DirectoryChooser;
+import javafx.stage.Stage;
 import modelo.pizza;
-
 
 public class FXMLDocumentController implements Initializable {
 
@@ -112,7 +116,8 @@ public class FXMLDocumentController implements Initializable {
     private AnchorPane paneBase;
 
     private pizza nuevaPizza = new pizza();
-    
+    @FXML
+    private Button ticket;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -148,31 +153,30 @@ public class FXMLDocumentController implements Initializable {
     private void tipoPizza() {
 
         if (pMargarita.isSelected()) {
-            nuevaPizza.setTipo("margarita");
+            nuevaPizza.setTipo("Margarita");
         }
         if (p4estaciones.isSelected()) {
-            nuevaPizza.setTipo("estaciones");
+            nuevaPizza.setTipo("3 Estaciones");
         }
         if (pBBQ.isSelected()) {
             nuevaPizza.setTipo("BBQ");
         }
         if (pBoloñesa.isSelected()) {
-            nuevaPizza.setTipo("boloñesa");
+            nuevaPizza.setTipo("Bolognesa");
         }
         if (pCuatroQuesos.isSelected()) {
-            nuevaPizza.setTipo("quesos");
+            nuevaPizza.setTipo("4 Quesos");
         }
         if (pEmpresa.isSelected()) {
-            nuevaPizza.setTipo("empresa");
+            nuevaPizza.setTipo("Fattore");
         }
         if (pMarinera.isSelected()) {
-            nuevaPizza.setTipo("marinera");
+            nuevaPizza.setTipo("Marinera");
         }
         if (pProscuto.isSelected()) {
-            nuevaPizza.setTipo("proscuto");
+            nuevaPizza.setTipo("Prosciutto");
         }
 
-       
     }
 
     private void tipoMasa() {
@@ -335,7 +339,7 @@ public class FXMLDocumentController implements Initializable {
         }
         vermasa = nuevaPizza.getMasa();
         if (vermasa != null) {
-            textMasa.setText("Masa tipo " + vermasa);
+            textMasa.setText("Masa " + vermasa);
         } else {
             textMasa.setText("");
         }
@@ -344,39 +348,40 @@ public class FXMLDocumentController implements Initializable {
     private void verIngrExtra() {
         textIngredientes.setText("");
         nuevaPizza.limpiarListaIngredientes();
+
         if (iAceitunas.isSelected()) {
             textIngredientes.appendText("Aceitunas \n");
-            nuevaPizza.añadirIngrediente("aceitunas");
+            nuevaPizza.añadirIngrediente("Aceitunas");
         }
         if (iBBQ.isSelected()) {
-            textIngredientes.appendText("Salsa Barbacoa \n");
-            nuevaPizza.añadirIngrediente("BBQ");
+            textIngredientes.appendText("Salsa barbacoa \n");
+            nuevaPizza.añadirIngrediente("Salsa barbacoa");
         }
         if (iCarnePicada.isSelected()) {
             textIngredientes.appendText("Carne picada\n");
-            nuevaPizza.añadirIngrediente("carnePicada");
+            nuevaPizza.añadirIngrediente("Carne picada");
         }
         if (iCebolla.isSelected()) {
             textIngredientes.appendText("Cebolla \n");
-            nuevaPizza.añadirIngrediente("cebolla");
+            nuevaPizza.añadirIngrediente("Cebolla");
         }
         if (iJamon.isSelected()) {
-            textIngredientes.appendText("Jamón York \n");
-            nuevaPizza.añadirIngrediente("jamon");
+            textIngredientes.appendText("Jamón york \n");
+            nuevaPizza.añadirIngrediente("Jamón york");
         }
         if (iPollo.isSelected()) {
             textIngredientes.appendText("Pollo \n");
-            nuevaPizza.añadirIngrediente("pollo");
+            nuevaPizza.añadirIngrediente("Pollo");
         }
         if (iQueso.isSelected()) {
             textIngredientes.appendText("Mozzarella \n");
-            nuevaPizza.añadirIngrediente("queso");
+            nuevaPizza.añadirIngrediente("Mozzarella");
         }
         if (iTomate.isSelected()) {
             textIngredientes.appendText("Tomate natural\n");
-            nuevaPizza.añadirIngrediente("tomateNatural");
+            nuevaPizza.añadirIngrediente("Tomate natural");
         }
-
+//         textIngredientes.setText(nuevaPizza.pedido());//prueba
     }
 
     private void precioIngreExtra() {
@@ -438,5 +443,11 @@ public class FXMLDocumentController implements Initializable {
         nuevaPizza.setTamaño(null);
         nuevaPizza.setTipo(null);
 
+    }
+
+    @FXML
+    private void imprimirTicket(ActionEvent event) {
+
+        nuevaPizza.generarTicket();
     }
 }
