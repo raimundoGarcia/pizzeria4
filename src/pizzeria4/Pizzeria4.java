@@ -1,5 +1,5 @@
 
-package pizzeria3;
+package pizzeria4;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -8,7 +8,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 
-public class Pizzeria3 extends Application {
+public class Pizzeria4 extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {

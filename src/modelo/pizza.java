@@ -104,14 +104,16 @@ public class pizza {
     public String pedido() {//bajo construcción
         String pedido, ingrediente;
 
-        pedido = String.format("%-80s %-5.2f", descripcionPizza(), precioTipoPizza()) + "€\n"
-                + String.format("Masa: %-110s %-4.2f", masa, precioTipoMasa()) + "€\n";
+        pedido = String.format("%-80s %-4.2f \r\n", descripcionPizza(), precioTipoPizza())
+                + String.format("Masa: %-74s %-4.2f \r\n" , masa, precioTipoMasa());
 
         for (int i = 0; i < ingredientes.size(); i++) {
             ingrediente = ingredientes.get(i);
-            pedido += String.format("%-80s %-5.2f", ingrediente, precio.getPrecioIngrediente(ingrediente)) + "€\n";
+            pedido += String.format("%-80s %-4.2f \r\n", ingrediente, precio.getPrecioIngrediente(ingrediente));
         }
-        pedido += String.format("%-110s X %-4.2f", tamaño, precio.getPrecioTamaño(tamaño)) + "\n";
+        pedido += String.format("%-78s X %-4.2f \r\n", tamaño, precio.getPrecioTamaño(tamaño));
+        pedido += " -----------------------------------------------------------------------------------------------\r\n";
+        pedido += String.format("%-79s %-5.2f \r\n","PRECIO FINAL",calcularPrecio());
         return pedido;
     }
 
@@ -143,14 +145,7 @@ public class pizza {
     }
 
     public void generarTicket() {
-//        File nuevos;
-//        try {
-//            nuevos = new File(rutaGuardado() + "\\" + fechaTicket() + ".txt");
-//            if (!nuevos.exists()) {
-//                nuevos.createNewFile();
-//            }
-//        } catch (IOException ex) {
-//        }
+
             Path fichero = Paths.get(rutaGuardado() + "\\" + fechaTicket() + ".txt");
             try (BufferedWriter bw = Files.newBufferedWriter(fichero, StandardOpenOption.CREATE)) {
 
