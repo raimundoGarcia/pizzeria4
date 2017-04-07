@@ -77,40 +77,64 @@ public class precios {
 //        listaTamaños.put("mediana", 1.3);
 //        listaTamaños.put("familiar", 1.7);
         cargarTipo();
-        cargarTamaño();
-        cargarMasa();
-        cargarIngredientes();
-        cargarDescripciones();
+//        cargarTamaño();
+//        cargarMasa();
+//        cargarIngredientes();
+//        cargarDescripciones();
 
     }
 
     private void cargarTipo() {//bajo construccion
         String primero = "";
+        int contador = 0;
         double segundo = -1;
         try {
-               FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Buscar Archivo");
-        File archivo = fileChooser.showOpenDialog(null);
-        if (archivo != null) {
-            File pathArchivo = new File(archivo.getAbsolutePath());
-            System.out.println(pathArchivo);
-//            Path archivo = Paths.get("precioTipo.txt");
-            Files.lines(pathArchivo.toPath());
-            Stream<String> datos = Files.lines(pathArchivo.toPath());
-            Iterator<String> it = datos.iterator();
-            while (it.hasNext()) {
-                String linea = it.next();
-                String[] trozos = linea.split(":");
-                for (String trozo : trozos) {
-                    primero = trozos[0];
-                    segundo = Double.parseDouble(trozos[1]);
-                }
-                listaPizzas.put(primero, segundo);
-            }}
-        } catch (IOException ex) {
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Buscar Archivo");
+            File archivo = fileChooser.showOpenDialog(null);
+            if (archivo != null) {
+                File pathArchivo = new File(archivo.getAbsolutePath());
+                
+                Files.lines(pathArchivo.toPath());
+                Stream<String> datos = Files.lines(pathArchivo.toPath());
+                Iterator<String> it = datos.iterator();
+                while (it.hasNext()) {
+                    String linea = it.next();
+                    if (linea.equals("^^")) {
+                        contador++;
+                    } else {
+                        String[] trozos = linea.split(":");
+                        for (String trozo : trozos) {
+                            primero = trozos[0];
+                            segundo = Double.parseDouble(trozos[1]);
+                        }
+                    }
+                    switch (contador) {
+                        case 1:
+                            listaPizzas.put(primero, segundo);
+                            break;
+                        case 2:
+                            listaTamaños.put(primero, segundo);
+                            break;
+                        case 3:
+                            listaMasas.put(primero, segundo);
+                            break;
+                        case 4:
+                            listaIngredientes.put(primero, segundo);
+                            break;
+                        case 5:
+                            listaDescripcion.put(primero,String.valueOf(segundo));
+                            break;
+                        default:
+                            break;
+                    }
+                }}
+            }catch (IOException ex) {
 
         }
-    }
+        }
+
+    
 
     private void cargarTamaño() {
         String primero = "";
