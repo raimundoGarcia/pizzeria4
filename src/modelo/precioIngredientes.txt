@@ -1,8 +1,0 @@
-Jamón york:1.00
-Cebolla:0.50
-Pollo:1.50
-Salsa barbacoa:0.70
-Aceitunas:0.80
-Carne picada:1.50
-Tomate natural:0.50
-Mozzarella:1.00

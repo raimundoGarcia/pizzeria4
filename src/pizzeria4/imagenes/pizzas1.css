@@ -161,3 +161,20 @@
 .logo2{
     -fx-background-image: url("\logo2.jpg")
 }
+.flecha{
+    -fx-background-image: url("\flecha.gif")
+}
+.pMargarita:hover,.pBolognesa:hover,.iAceitunas:hover,.iTomate:hover,.p4estaciones:hover,.pCuatroQuesos:hover,.mRellena:hover,
+.iBBQ:hover,.iPollo:hover,.pEmpresa:hover,.pBBQ:hover,.mIntegral:hover,.iQueso:hover,.iJamon:hover,.iCarnePicada:hover,.iCebolla:hover,
+.pMarinera:hover,.pProscuto:hover,.mNormal:hover,.pBolognesa:hover,.mFina:hover{
+    -fx-background-size: 138px 78px;
+
+    -fx-background-repeat: no-repeat;
+
+    -fx-background-position: center 1px;
+
+    -fx-min-height: 78px;
+
+    -fx-min-width: 138px;
+
+}

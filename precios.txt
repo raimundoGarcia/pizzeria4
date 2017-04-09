@@ -1,0 +1,27 @@
+Margarita:5.80
+3 Estaciones:7.0
+BBQ:8.0
+Bolognesa:8.0
+4 Quesos:7.5
+Fattore:8.5
+Marinera:9.0
+Prosciutto:6.5
+^^
+infantil:0.5
+pequenya:1.0
+mediana:1.3
+familiar:1.7
+^^
+normal:0.5
+fina:1.0
+integral:1.5
+rellena:2.5
+^^
+Jamon york:1.00
+Cebolla:0.50
+Pollo:1.50
+Salsa barbacoa:0.70
+Aceitunas:0.80
+Carne picada:1.50
+Tomate natural:0.50
+Mozzarella:1.00

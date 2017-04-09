@@ -1,8 +1,0 @@
-Margarita:5.80
-3 Estaciones:7.0
-BBQ:8.0
-Bolognesa:8.0
-4 Quesos:7.5
-Fattore:8.5
-Marinera:9.0
-Prosciutto:6.5

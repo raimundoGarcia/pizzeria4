@@ -1,8 +1,6 @@
 package pizzeria4;
 
-import java.io.File;
 import java.net.URL;
-import java.nio.file.Path;
 import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -18,8 +16,6 @@ import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
-import javafx.stage.DirectoryChooser;
-import javafx.stage.Stage;
 import modelo.pizza;
 
 public class FXMLDocumentController implements Initializable {
@@ -118,10 +114,15 @@ public class FXMLDocumentController implements Initializable {
     private pizza nuevaPizza = new pizza();
     @FXML
     private Button ticket;
+    @FXML
+    private Button cargarPrecios;
+    @FXML
+    private Pane panelFlecha;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         selectArranque();
+//        panelMasas.setDisable(true);
 
     }
 
@@ -148,6 +149,7 @@ public class FXMLDocumentController implements Initializable {
         pMargarita.setStyle("-fx-border-width:3px;-fx-border-color:red;");
         mNormal.setStyle("-fx-border-width:3px;-fx-border-color:red;");
         paneBase.setStyle("-fx-background-color: white");
+        desHabilitar();
     }
 
     private void tipoPizza() {
@@ -208,7 +210,7 @@ public class FXMLDocumentController implements Initializable {
             nuevaPizza.setTamaño("infantil");
         }
         if (rbPequeña.isSelected()) {
-            nuevaPizza.setTamaño("pequeña");
+            nuevaPizza.setTamaño("pequenya");
         }
 
     }
@@ -367,7 +369,7 @@ public class FXMLDocumentController implements Initializable {
         }
         if (iJamon.isSelected()) {
             textIngredientes.appendText("Jamón york \n");
-            nuevaPizza.añadirIngrediente("Jamón york");
+            nuevaPizza.añadirIngrediente("Jamon york");
         }
         if (iPollo.isSelected()) {
             textIngredientes.appendText("Pollo \n");
@@ -381,7 +383,7 @@ public class FXMLDocumentController implements Initializable {
             textIngredientes.appendText("Tomate natural\n");
             nuevaPizza.añadirIngrediente("Tomate natural");
         }
-//         textIngredientes.setText(nuevaPizza.pedido());//prueba
+
     }
 
     private void precioIngreExtra() {
@@ -450,4 +452,33 @@ public class FXMLDocumentController implements Initializable {
 
         nuevaPizza.generarTicket();
     }
+
+    @FXML
+    private void cargar(ActionEvent event) {
+        nuevaPizza.getPrecio().cargarListas();
+        habilitar();
+    }
+    
+    private void desHabilitar(){
+        panelDetalles.setDisable(true);
+        panelIngredientes.setDisable(true);
+        panelMasas.setDisable(true);
+        panelPizzas.setDisable(true);
+        panelTamaño.setDisable(true);
+        ticket.setDisable(true);
+    }
+    
+    private void habilitar(){
+        if (!nuevaPizza.getPrecio().getListaIngredientes().isEmpty() && !nuevaPizza.getPrecio().getListaDescripcion().isEmpty()){
+            panelDetalles.setDisable(false);
+            panelIngredientes.setDisable(false);
+            panelMasas.setDisable(false);
+            panelPizzas.setDisable(false);
+            panelTamaño.setDisable(false);
+            ticket.setDisable(false);
+            panelFlecha.setVisible(false);
+            cargarPrecios.setVisible(false);
+        }
+    }
+    
 }
