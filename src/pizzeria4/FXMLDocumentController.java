@@ -3,6 +3,7 @@ package pizzeria4;
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.ResourceBundle;
+import javafx.beans.property.DoubleProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -128,6 +129,7 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void seleccion(ActionEvent event) {
+       
         clearBoard();
         bordePizza();
         bordeIngredientes();
@@ -380,7 +382,7 @@ public class FXMLDocumentController implements Initializable {
             nuevaPizza.añadirIngrediente("Mozzarella");
         }
         if (iTomate.isSelected()) {
-            textIngredientes.appendText("Tomate natural\n");
+            textIngredientes.appendText("Tomate natural");
             nuevaPizza.añadirIngrediente("Tomate natural");
         }
 
@@ -479,6 +481,14 @@ public class FXMLDocumentController implements Initializable {
             panelFlecha.setVisible(false);
             cargarPrecios.setVisible(false);
         }
+    }
+    private void agrandar(){
+       if( iJamon.isHover()){
+         
+           iJamon.setLayoutX(32);
+           iJamon.setLayoutY(12);
+           
+       }
     }
     
 }

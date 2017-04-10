@@ -176,5 +176,8 @@
     -fx-min-height: 78px;
 
     -fx-min-width: 138px;
+    
+    -fx-margin-bottom: 6px;
+    -fx-margin-right: 11px;
 
 }

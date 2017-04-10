@@ -135,7 +135,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="labError" layoutX="607.0" layoutY="582.0" prefHeight="17.0" prefWidth="254.0" stylesheets="@imagenes/pizzas1.css" textFill="#fc0000" />
+      <Label fx:id="labError" layoutX="400.0" layoutY="14.0" prefHeight="17.0" prefWidth="254.0" stylesheets="@imagenes/pizzas1.css" textFill="#fc0000" />
       <Pane fx:id="logo" layoutX="19.0" prefHeight="126.0" prefWidth="157.0" styleClass="logo" stylesheets="@imagenes/pizzas1.css" />
       <Pane fx:id="logo2" layoutX="967.0" layoutY="52.0" prefHeight="213.0" prefWidth="261.0" styleClass="logo2" stylesheets="@imagenes/pizzas1.css" />
       <Button fx:id="ticket" layoutX="985.0" layoutY="553.0" mnemonicParsing="false" onAction="#imprimirTicket" prefHeight="25.0" prefWidth="208.0" stylesheets="@imagenes/pizzas1.css" text="Generar ticket" />
