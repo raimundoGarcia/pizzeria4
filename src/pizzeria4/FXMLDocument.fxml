@@ -30,55 +30,75 @@
             <Font name="Segoe Script" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="precioFinal" layoutX="672.0" layoutY="613.0" prefHeight="27.0" prefWidth="62.0" stylesheets="@imagenes/pizzas1.css">
-         <font>
-            <Font size="18.0" />
-         </font></Label>
       <SplitPane fx:id="panelPizzas" dividerPositions="0.5050505050505051" layoutX="206.0" layoutY="43.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="620.0" styleClass="panelPizzas" stylesheets="@imagenes/pizzas1.css">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="97.0" prefWidth="659.0" stylesheets="@imagenes/pizzas1.css">
                <children>
-                  <ToggleButton fx:id="pMargarita" layoutX="32.0" layoutY="16.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="pMargarita" stylesheets="@imagenes/pizzas1.css">
+                  <ToggleButton fx:id="pMargarita" layoutX="31.0" layoutY="16.0" mnemonicParsing="false" onAction="#seleccion" onMouseEntered="#centrado" onMouseExited="#retorno" prefHeight="65.0" prefWidth="115.0" styleClass="pMargarita" stylesheets="@imagenes/pizzas1.css" textFill="#030303">
                      <toggleGroup>
                         <ToggleGroup fx:id="grupoPizza" />
                      </toggleGroup>
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
                   </ToggleButton>
-                  <ToggleButton fx:id="pProscuto" layoutX="184.0" layoutY="16.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="pProscuto" stylesheets="@imagenes/pizzas1.css" toggleGroup="$grupoPizza" />
-                  <ToggleButton fx:id="pCuatroQuesos" layoutX="331.0" layoutY="16.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="pCuatroQuesos" stylesheets="@imagenes/pizzas1.css" toggleGroup="$grupoPizza" />
-                  <ToggleButton fx:id="pBoloñesa" layoutX="474.0" layoutY="16.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="pBolognesa" stylesheets="@imagenes/pizzas1.css" toggleGroup="$grupoPizza" />
+                  <ToggleButton fx:id="pProscuto" layoutX="185.0" layoutY="16.0" mnemonicParsing="false" onAction="#seleccion" onMouseEntered="#centrado" onMouseExited="#retorno" prefHeight="65.0" prefWidth="115.0" styleClass="pProscuto" stylesheets="@imagenes/pizzas1.css" textFill="#030303" toggleGroup="$grupoPizza">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font></ToggleButton>
+                  <ToggleButton fx:id="pCuatroQuesos" layoutX="332.0" layoutY="16.0" mnemonicParsing="false" onAction="#seleccion" onMouseEntered="#centrado" onMouseExited="#retorno" prefHeight="65.0" prefWidth="115.0" styleClass="pCuatroQuesos" stylesheets="@imagenes/pizzas1.css" textFill="#030303" toggleGroup="$grupoPizza">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font></ToggleButton>
+                  <ToggleButton fx:id="pBoloñesa" layoutX="474.0" layoutY="16.0" mnemonicParsing="false" onAction="#seleccion" onMouseEntered="#centrado" onMouseExited="#retorno" prefHeight="65.0" prefWidth="115.0" styleClass="pBolognesa" stylesheets="@imagenes/pizzas1.css" textFill="#030303" toggleGroup="$grupoPizza">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font></ToggleButton>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" stylesheets="@imagenes/pizzas1.css">
                <children>
-                  <ToggleButton fx:id="p4estaciones" layoutX="32.0" layoutY="11.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="p4estaciones" stylesheets="@imagenes/pizzas1.css" toggleGroup="$grupoPizza" />
-                  <ToggleButton fx:id="pBBQ" layoutX="185.0" layoutY="11.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="pBBQ" stylesheets="@imagenes/pizzas1.css" toggleGroup="$grupoPizza" />
-                  <ToggleButton fx:id="pMarinera" layoutX="332.0" layoutY="11.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="pMarinera" stylesheets="@imagenes/pizzas1.css" toggleGroup="$grupoPizza" />
-                  <ToggleButton fx:id="pEmpresa" layoutX="475.0" layoutY="11.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="pEmpresa" stylesheets="@imagenes/pizzas1.css" toggleGroup="$grupoPizza" />
+                  <ToggleButton fx:id="p4estaciones" layoutX="31.0" layoutY="11.0" mnemonicParsing="false" onAction="#seleccion" onMouseEntered="#centrado" onMouseExited="#retorno" prefHeight="65.0" prefWidth="115.0" styleClass="p4estaciones" stylesheets="@imagenes/pizzas1.css" textFill="#030303" toggleGroup="$grupoPizza">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font></ToggleButton>
+                  <ToggleButton fx:id="pBBQ" layoutX="185.0" layoutY="11.0" mnemonicParsing="false" onAction="#seleccion" onMouseEntered="#centrado" onMouseExited="#retorno" prefHeight="65.0" prefWidth="115.0" styleClass="pBBQ" stylesheets="@imagenes/pizzas1.css" textFill="#030303" toggleGroup="$grupoPizza">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font></ToggleButton>
+                  <ToggleButton fx:id="pMarinera" layoutX="332.0" layoutY="11.0" mnemonicParsing="false" onAction="#seleccion" onMouseEntered="#centrado" onMouseExited="#retorno" prefHeight="65.0" prefWidth="115.0" styleClass="pMarinera" stylesheets="@imagenes/pizzas1.css" textFill="#030303" toggleGroup="$grupoPizza">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font></ToggleButton>
+                  <ToggleButton fx:id="pEmpresa" layoutX="474.0" layoutY="11.0" mnemonicParsing="false" onAction="#seleccion" onMouseEntered="#centrado" onMouseExited="#retorno" prefHeight="65.0" prefWidth="115.0" styleClass="pEmpresa" stylesheets="@imagenes/pizzas1.css" textFill="#030303" toggleGroup="$grupoPizza">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font></ToggleButton>
                </children>
             </AnchorPane>
         </items>
       </SplitPane>
       <Pane fx:id="panelMasas" layoutX="206.0" layoutY="254.0" prefHeight="95.0" prefWidth="620.0" styleClass="panelMasas" stylesheets="@imagenes/pizzas1.css">
          <children>
-            <ToggleButton fx:id="mNormal" layoutX="35.0" layoutY="15.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="mNormal" stylesheets="@imagenes/pizzas1.css" text="Normal" textFill="#030303">
+            <ToggleButton fx:id="mNormal" layoutX="34.0" layoutY="15.0" mnemonicParsing="false" onAction="#seleccion" onMouseEntered="#centrado" onMouseExited="#retorno" prefHeight="65.0" prefWidth="115.0" styleClass="mNormal" stylesheets="@imagenes/pizzas1.css" textFill="#030303">
                <toggleGroup>
                   <ToggleGroup fx:id="masa" />
                </toggleGroup>
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="System Bold" size="16.0" />
                </font>
             </ToggleButton>
-            <ToggleButton fx:id="mFina" layoutX="187.0" layoutY="14.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="mFina" stylesheets="@imagenes/pizzas1.css" text="Fina" textFill="#030303" toggleGroup="$masa">
+            <ToggleButton fx:id="mFina" layoutX="188.0" layoutY="15.0" mnemonicParsing="false" onAction="#seleccion" onMouseEntered="#centrado" onMouseExited="#retorno" prefHeight="65.0" prefWidth="115.0" styleClass="mFina" stylesheets="@imagenes/pizzas1.css" textFill="#030303" toggleGroup="$masa">
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="System Bold" size="16.0" />
                </font></ToggleButton>
-            <ToggleButton fx:id="mIntegral" layoutX="334.0" layoutY="14.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="mIntegral" stylesheets="@imagenes/pizzas1.css" text="Integral" textFill="#030303" toggleGroup="$masa">
+            <ToggleButton fx:id="mIntegral" layoutX="334.0" layoutY="15.0" mnemonicParsing="false" onAction="#seleccion" onMouseEntered="#centrado" onMouseExited="#retorno" prefHeight="65.0" prefWidth="115.0" styleClass="mIntegral" stylesheets="@imagenes/pizzas1.css" textFill="#030303" toggleGroup="$masa">
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="System Bold" size="16.0" />
                </font></ToggleButton>
-            <ToggleButton fx:id="mRellena" layoutX="476.0" layoutY="15.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="mRellena" stylesheets="@imagenes/pizzas1.css" text="Rellena" textFill="#030303" toggleGroup="$masa">
+            <ToggleButton fx:id="mRellena" layoutX="478.0" layoutY="15.0" mnemonicParsing="false" onAction="#seleccion" onMouseEntered="#centrado" onMouseExited="#retorno" prefHeight="65.0" prefWidth="115.0" styleClass="mRellena" stylesheets="@imagenes/pizzas1.css" textFill="#030303" toggleGroup="$masa">
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="System Bold" size="16.0" />
                </font></ToggleButton>
          </children>
       </Pane>
@@ -98,23 +118,47 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="87.0" prefWidth="612.0" stylesheets="@imagenes/pizzas1.css">
                <children>
-                  <ToggleButton fx:id="iJamon" layoutX="33.0" layoutY="11.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="iJamon" stylesheets="@imagenes/pizzas1.css" />
-                  <ToggleButton fx:id="iQueso" layoutX="185.0" layoutY="11.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="iQueso" stylesheets="@imagenes/pizzas1.css" />
-                  <ToggleButton fx:id="iCebolla" layoutX="334.0" layoutY="11.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="iCebolla" stylesheets="@imagenes/pizzas1.css" />
-                  <ToggleButton fx:id="iTomate" layoutX="474.0" layoutY="11.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="iTomate" stylesheets="@imagenes/pizzas1.css" />
+                  <ToggleButton fx:id="iJamon" layoutX="31.0" layoutY="11.0" mnemonicParsing="false" onAction="#seleccion" onMouseEntered="#centrado" onMouseExited="#retorno" prefHeight="65.0" prefWidth="115.0" styleClass="iJamon" stylesheets="@imagenes/pizzas1.css" textFill="#030303">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font></ToggleButton>
+                  <ToggleButton fx:id="iQueso" layoutX="185.0" layoutY="11.0" mnemonicParsing="false" onAction="#seleccion" onMouseEntered="#centrado" onMouseExited="#retorno" prefHeight="65.0" prefWidth="115.0" styleClass="iQueso" stylesheets="@imagenes/pizzas1.css" textFill="#030303">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font></ToggleButton>
+                  <ToggleButton fx:id="iCebolla" layoutX="334.0" layoutY="11.0" mnemonicParsing="false" onAction="#seleccion" onMouseEntered="#centrado" onMouseExited="#retorno" prefHeight="65.0" prefWidth="115.0" styleClass="iCebolla" stylesheets="@imagenes/pizzas1.css" textFill="#030303">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font></ToggleButton>
+                  <ToggleButton fx:id="iTomate" layoutX="474.0" layoutY="11.0" mnemonicParsing="false" onAction="#seleccion" onMouseEntered="#centrado" onMouseExited="#retorno" prefHeight="65.0" prefWidth="115.0" styleClass="iTomate" stylesheets="@imagenes/pizzas1.css" textFill="#030303">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font></ToggleButton>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="93.0" prefWidth="612.0" stylesheets="@imagenes/pizzas1.css">
                <children>
-                  <ToggleButton fx:id="iPollo" layoutX="33.0" layoutY="10.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="iPollo" stylesheets="@imagenes/pizzas1.css" />
-                  <ToggleButton fx:id="iCarnePicada" layoutX="186.0" layoutY="10.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="iCarnePicada" stylesheets="@imagenes/pizzas1.css" />
-                  <ToggleButton fx:id="iAceitunas" layoutX="332.0" layoutY="10.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="iAceitunas" stylesheets="@imagenes/pizzas1.css" />
-                  <ToggleButton fx:id="iBBQ" layoutX="473.0" layoutY="10.0" mnemonicParsing="false" onAction="#seleccion" prefHeight="65.0" prefWidth="115.0" styleClass="iBBQ" stylesheets="@imagenes/pizzas1.css" />
+                  <ToggleButton fx:id="iPollo" layoutX="31.0" layoutY="10.0" mnemonicParsing="false" onAction="#seleccion" onMouseEntered="#centrado" onMouseExited="#retorno" prefHeight="65.0" prefWidth="115.0" styleClass="iPollo" stylesheets="@imagenes/pizzas1.css" textFill="#030303">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font></ToggleButton>
+                  <ToggleButton fx:id="iCarnePicada" layoutX="185.0" layoutY="10.0" mnemonicParsing="false" onAction="#seleccion" onMouseEntered="#centrado" onMouseExited="#retorno" prefHeight="65.0" prefWidth="115.0" styleClass="iCarnePicada" stylesheets="@imagenes/pizzas1.css" textFill="#030303">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font></ToggleButton>
+                  <ToggleButton fx:id="iAceitunas" layoutX="334.0" layoutY="10.0" mnemonicParsing="false" onAction="#seleccion" onMouseEntered="#centrado" onMouseExited="#retorno" prefHeight="65.0" prefWidth="115.0" styleClass="iAceitunas" stylesheets="@imagenes/pizzas1.css" textFill="#030303">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font></ToggleButton>
+                  <ToggleButton fx:id="iBBQ" layoutX="474.0" layoutY="10.0" mnemonicParsing="false" onAction="#seleccion" onMouseEntered="#centrado" onMouseExited="#retorno" prefHeight="65.0" prefWidth="115.0" styleClass="iBBQ" stylesheets="@imagenes/pizzas1.css" textFill="#030303">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font></ToggleButton>
                </children>
             </AnchorPane>
         </items>
       </SplitPane>
-      <TitledPane fx:id="panelDetalles" animated="false" expanded="false" layoutX="838.0" layoutY="285.0" prefHeight="229.0" prefWidth="515.0" stylesheets="@imagenes/pizzas1.css" text="Detalles">
+      <TitledPane fx:id="panelDetalles" animated="false" layoutX="838.0" layoutY="285.0" prefHeight="229.0" prefWidth="515.0" stylesheets="@imagenes/pizzas1.css" text="Detalles">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="203.0" prefWidth="517.0">
                <children>
@@ -130,14 +174,21 @@
             </AnchorPane>
         </content>
       </TitledPane>
-      <Label layoutX="406.0" layoutY="613.0" prefHeight="27.0" prefWidth="121.0" stylesheets="@imagenes/pizzas1.css" text="PRECIO FINAL">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
       <Label fx:id="labError" layoutX="400.0" layoutY="14.0" prefHeight="17.0" prefWidth="254.0" stylesheets="@imagenes/pizzas1.css" textFill="#fc0000" />
       <Pane fx:id="logo" layoutX="19.0" prefHeight="126.0" prefWidth="157.0" styleClass="logo" stylesheets="@imagenes/pizzas1.css" />
-      <Pane fx:id="logo2" layoutX="967.0" layoutY="52.0" prefHeight="213.0" prefWidth="261.0" styleClass="logo2" stylesheets="@imagenes/pizzas1.css" />
+      <Pane fx:id="logo2" layoutX="967.0" layoutY="52.0" prefHeight="213.0" prefWidth="261.0" styleClass="logo2" stylesheets="@imagenes/pizzas1.css">
+         <children>
+            <Label fx:id="precioFinal" layoutX="49.0" layoutY="32.0" prefHeight="27.0" prefWidth="62.0" stylesheets="@imagenes/pizzas1.css">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelEuro" layoutX="62.0" layoutY="51.0" prefHeight="17.0" prefWidth="24.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children></Pane>
       <Button fx:id="ticket" layoutX="985.0" layoutY="553.0" mnemonicParsing="false" onAction="#imprimirTicket" prefHeight="25.0" prefWidth="208.0" stylesheets="@imagenes/pizzas1.css" text="Generar ticket" />
       <Button fx:id="cargarPrecios" layoutX="985.0" layoutY="601.0" mnemonicParsing="false" onAction="#cargar" prefHeight="25.0" prefWidth="208.0" text="Cargar precios" />
       <Pane fx:id="panelFlecha" layoutX="905.0" layoutY="564.0" prefHeight="36.0" prefWidth="45.0" styleClass="flecha" stylesheets="@imagenes/pizzas1.css" />

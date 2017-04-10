@@ -15,6 +15,8 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TitledPane;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.input.DragEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import modelo.pizza;
@@ -119,17 +121,18 @@ public class FXMLDocumentController implements Initializable {
     private Button cargarPrecios;
     @FXML
     private Pane panelFlecha;
+    @FXML
+    private Label labelEuro;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         selectArranque();
-//        panelMasas.setDisable(true);
 
     }
 
     @FXML
     private void seleccion(ActionEvent event) {
-       
+
         clearBoard();
         bordePizza();
         bordeIngredientes();
@@ -142,6 +145,7 @@ public class FXMLDocumentController implements Initializable {
         verIngrExtra();
         precioIngreExtra();
         mostrarPrecioPizza();
+
     }
 
     private void selectArranque() {
@@ -150,7 +154,7 @@ public class FXMLDocumentController implements Initializable {
         rbMediana.setSelected(true);
         pMargarita.setStyle("-fx-border-width:3px;-fx-border-color:red;");
         mNormal.setStyle("-fx-border-width:3px;-fx-border-color:red;");
-        paneBase.setStyle("-fx-background-color: white");
+        paneBase.setStyle("-fx-background-color: white;");
         desHabilitar();
     }
 
@@ -427,9 +431,9 @@ public class FXMLDocumentController implements Initializable {
             labError.setText("Selecciona un tipo de masa");
         } else {
             labError.setText("");
-
+            labelEuro.setText(" €");
             formateado = df.format(nuevaPizza.calcularPrecio());
-            precioFinal.setText(String.valueOf(formateado) + "€");
+            precioFinal.setText(String.valueOf(formateado));
         }
     }
 
@@ -443,6 +447,7 @@ public class FXMLDocumentController implements Initializable {
         precioMasa.setText("");
         precioPizza.setText("");
         precioTamaño.setText("");
+        labelEuro.setText("");
         nuevaPizza.setMasa(null);
         nuevaPizza.setTamaño(null);
         nuevaPizza.setTipo(null);
@@ -451,7 +456,6 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void imprimirTicket(ActionEvent event) {
-
         nuevaPizza.generarTicket();
     }
 
@@ -460,8 +464,8 @@ public class FXMLDocumentController implements Initializable {
         nuevaPizza.getPrecio().cargarListas();
         habilitar();
     }
-    
-    private void desHabilitar(){
+
+    private void desHabilitar() {
         panelDetalles.setDisable(true);
         panelIngredientes.setDisable(true);
         panelMasas.setDisable(true);
@@ -469,9 +473,9 @@ public class FXMLDocumentController implements Initializable {
         panelTamaño.setDisable(true);
         ticket.setDisable(true);
     }
-    
-    private void habilitar(){
-        if (!nuevaPizza.getPrecio().getListaIngredientes().isEmpty() && !nuevaPizza.getPrecio().getListaDescripcion().isEmpty()){
+
+    private void habilitar() {
+        if (!nuevaPizza.getPrecio().getListaIngredientes().isEmpty() && !nuevaPizza.getPrecio().getListaDescripcion().isEmpty()) {
             panelDetalles.setDisable(false);
             panelIngredientes.setDisable(false);
             panelMasas.setDisable(false);
@@ -482,13 +486,181 @@ public class FXMLDocumentController implements Initializable {
             cargarPrecios.setVisible(false);
         }
     }
-    private void agrandar(){
-       if( iJamon.isHover()){
-         
-           iJamon.setLayoutX(32);
-           iJamon.setLayoutY(12);
-           
-       }
+
+    @FXML
+    private void centrado(MouseEvent event) {
+
+        /*---------------Pizzas---------------------------*/
+        if (pMargarita.isHover()) {
+            pMargarita.setLayoutX(20);
+            pMargarita.setLayoutY(10);
+            pMargarita.setText("\nMargarita");
+        }
+        if (pProscuto.isHover()) {
+            pProscuto.setLayoutX(174);
+            pProscuto.setLayoutY(10);
+            pProscuto.setText("\nProsciutto");
+        }
+        if (pCuatroQuesos.isHover()) {
+            pCuatroQuesos.setLayoutX(321);
+            pCuatroQuesos.setLayoutY(10);
+            pCuatroQuesos.setText("\nCuatro Quesos");
+        }
+        if (pBoloñesa.isHover()) {
+            pBoloñesa.setLayoutX(463);
+            pBoloñesa.setLayoutY(10);
+            pBoloñesa.setText("\nBolognesa");
+        }
+        if (p4estaciones.isHover()) {
+            p4estaciones.setLayoutX(20);
+            p4estaciones.setLayoutY(5);
+            p4estaciones.setText("\n4 estaciones");
+        }
+        if (pBBQ.isHover()) {
+            pBBQ.setLayoutX(174);
+            pBBQ.setLayoutY(5);
+            pBBQ.setText("\nBarbacoa");
+        }
+        if (pMarinera.isHover()) {
+            pMarinera.setLayoutX(321);
+            pMarinera.setLayoutY(5);
+            pMarinera.setText("\nMarinera");
+        }
+        if (pEmpresa.isHover()) {
+            pEmpresa.setLayoutX(463);
+            pEmpresa.setLayoutY(5);
+            pEmpresa.setText("\nFattore");
+        }
+        /*------------------Tamaños--------------------------*/
+        if (mNormal.isHover()) {
+            mNormal.setLayoutX(23);
+            mNormal.setLayoutY(9);
+            mNormal.setText("\nNormal");
+        }
+        if (mFina.isHover()) {
+            mFina.setLayoutX(177);
+            mFina.setLayoutY(9);
+            mFina.setText("\nFina");
+        }
+        if (mIntegral.isHover()) {
+            mIntegral.setLayoutX(323);
+            mIntegral.setLayoutY(9);
+            mIntegral.setText("\nIntegral");
+        }
+        if (mRellena.isHover()) {
+            mRellena.setLayoutX(467);
+            mRellena.setLayoutY(9);
+            mRellena.setText("\nRellena queso");
+            
+        }
+        /*------------------Ingredientes----------------------*/
+        if (iJamon.isHover()) {
+            iJamon.setLayoutX(20);
+            iJamon.setLayoutY(5);
+            iJamon.setText("\nJamon York");
+        }
+        if (iQueso.isHover()) {
+            iQueso.setLayoutX(174);
+            iQueso.setLayoutY(5);
+            iQueso.setText("\nMozzarella");
+        }
+        if (iCebolla.isHover()) {
+            iCebolla.setLayoutX(323);
+            iCebolla.setLayoutY(5);
+            iCebolla.setText("\nCebolla");
+        }
+        if (iTomate.isHover()) {
+            iTomate.setLayoutX(463);
+            iTomate.setLayoutY(5);
+            iTomate.setText("\nTomate");
+        }
+        if (iPollo.isHover()) {
+            iPollo.setLayoutX(20);
+            iPollo.setLayoutY(4);
+            iPollo.setText("\nPollo");
+        }
+        if (iCarnePicada.isHover()) {
+            iCarnePicada.setLayoutX(174);
+            iCarnePicada.setLayoutY(4);
+            iCarnePicada.setText("\nCarne picada");
+        }
+        if (iAceitunas.isHover()) {
+            iAceitunas.setLayoutX(323);
+            iAceitunas.setLayoutY(4);
+            iAceitunas.setText("\nAceitunas");
+        }
+        if (iBBQ.isHover()) {
+            iBBQ.setLayoutX(463);
+            iBBQ.setLayoutY(4);
+            iBBQ.setText("\nSalsa BBQ");
+        }
     }
-    
+
+    @FXML
+    private void retorno(MouseEvent event) {
+        /*---------------Pizzas---------------------------*/
+        pMargarita.setLayoutX(31);
+        pMargarita.setLayoutY(16);
+        pMargarita.setText("");
+        pProscuto.setLayoutX(185);
+        pProscuto.setLayoutY(16);
+        pProscuto.setText("");
+        pCuatroQuesos.setLayoutX(332);
+        pCuatroQuesos.setLayoutY(16);
+        pCuatroQuesos.setText("");
+        pBoloñesa.setLayoutX(474);
+        pBoloñesa.setLayoutY(16);
+        pBoloñesa.setText("");
+        p4estaciones.setLayoutX(31);
+        p4estaciones.setLayoutY(11);
+        p4estaciones.setText("");
+        pBBQ.setLayoutX(185);
+        pBBQ.setLayoutY(11);
+        pBBQ.setText("");
+        pMarinera.setLayoutX(332);
+        pMarinera.setLayoutY(11);
+        pMarinera.setText("");
+        pEmpresa.setLayoutX(474);
+        pEmpresa.setLayoutY(11);
+        pEmpresa.setText("");
+        /*------------------Tamaños--------------------------*/
+        mNormal.setLayoutX(34);
+        mNormal.setLayoutY(15);
+        mNormal.setText("");
+        mFina.setLayoutX(188);
+        mFina.setLayoutY(15);
+        mFina.setText("");
+        mIntegral.setLayoutX(334);
+        mIntegral.setLayoutY(15);
+        mIntegral.setText("");
+        mRellena.setLayoutX(478);
+        mRellena.setLayoutY(15);
+        mRellena.setText("");
+        /*------------------Ingredientes----------------------*/
+        iJamon.setLayoutX(31);
+        iJamon.setLayoutY(11);
+        iJamon.setText("");
+        iQueso.setLayoutX(185);
+        iQueso.setLayoutY(11);
+        iQueso.setText("");
+        iCebolla.setLayoutX(334);
+        iCebolla.setLayoutY(11);
+        iCebolla.setText("");
+        iTomate.setLayoutX(474);
+        iTomate.setLayoutY(11);
+        iTomate.setText("");
+        iPollo.setLayoutX(31);
+        iPollo.setLayoutY(10);
+        iPollo.setText("");
+        iCarnePicada.setLayoutX(185);
+        iCarnePicada.setLayoutY(10);
+        iCarnePicada.setText("");
+        iAceitunas.setLayoutX(334);
+        iAceitunas.setLayoutY(10);
+        iAceitunas.setText("");
+        iBBQ.setLayoutX(474);
+        iBBQ.setLayoutY(10);
+        iBBQ.setText("");
+    }
+
 }

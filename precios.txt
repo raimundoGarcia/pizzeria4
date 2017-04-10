@@ -25,3 +25,12 @@ Aceitunas:0.80
 Carne picada:1.50
 Tomate natural:0.50
 Mozzarella:1.00
+^^
+Margarita:Margarita (Salsa de tomate y mozzarella)       
+3 Estaciones:3 Estaciones (Tomate, mozzarella, alcachofas, aceitunas, jamon, setas)
+BBQ:BBQ (Tomate, mozzarella, salsa barbacoa, pollo, carne picada, bacon)
+Bolognesa:Bolognesa (Tomate, Mozzarella, salsa bolognesa, Carne Picada)        
+4 Quesos:4 Quesos (tomate, mozzarella, parmesano, queso azul, rulo de cabra)
+Fattore:Fattore (Tomate, mozzarella, jamon serrano, mozzarella di buffala, rucula)
+Marinera:Marinera (Salsa marinera, mozzarella, mejillones, gambas, calamares)      
+Prosciutto:Prosciutto (Tomate, mozzarella, prosciutto)                                 

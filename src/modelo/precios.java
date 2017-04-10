@@ -41,7 +41,7 @@ public class precios {
     }
 
     public precios() {
-//        cargarListas();
+
     }
 
     public double getPrecioTipoPizza(String tipo) {
@@ -66,16 +66,7 @@ public class precios {
 
     public void cargarListas() {
 
-        listaDescripcion.put("Margarita", "Margarita (Salsa de tomate y mozzarella)                                  ");
-        listaDescripcion.put("3 Estaciones", "3 Estaciones (Tomate, mozzarella, alcachofas, aceitunas, jamón, champiñon)");
-        listaDescripcion.put("BBQ", "BBQ (Tomate, mozzarella, salsa barbacoa, pollo, carne picada, bacon)      ");
-        listaDescripcion.put("Bolognesa", "Bolognesa (Tomate,Mozzarella, salsa bolognesa, Carne Picada)              ");
-        listaDescripcion.put("4 Quesos", "4 Quesos (tomate, mozzarella, parmesano, queso azul, rulo de cabra)       ");
-        listaDescripcion.put("Fattore", "Fattore (Tomate, mozzarella, jamón serrano, mozzarella di buffala, rucula)");
-        listaDescripcion.put("Marinera", "Marinera (Salsa marinera, mozzarella, mejillones, gambas, calamares)      ");
-        listaDescripcion.put("Prosciutto", "Prosciutto (Tomate, mozzarella, prosciutto, jamón cocido)                 ");
-
-        String primero = "";
+        String primero = "", descripcion = "";
         int contador = 1;
         double segundo = -1;
 
@@ -97,8 +88,13 @@ public class precios {
                     } else {
                         String[] trozos = linea.split(":");
                         for (String trozo : trozos) {
-                            primero = trozos[0];
-                            segundo = Double.parseDouble(trozos[1]);
+                            if (contador == 5) {
+                                primero = trozos[0];
+                                descripcion = trozos[1];
+                            } else {
+                                primero = trozos[0];
+                                segundo = Double.parseDouble(trozos[1]);
+                        }
                         }
                     }
                     switch (contador) {
@@ -114,10 +110,19 @@ public class precios {
                         case 4:
                             listaIngredientes.put(primero, segundo);
                             break;
+                        case 5:
+                            listaDescripcion.put(primero, descripcion);
+                            break;
                         default:
                             break;
                     }
                 }
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Seleccion de archivos");
+                alert.setHeaderText("Formato de archivo válido");
+                alert.setContentText("¡Programa operativo!");
+
+                alert.showAndWait();
             }
         } catch (IOException ex) {
         } catch (Exception e) {
@@ -130,5 +135,3 @@ public class precios {
         }
     }
 }
-
-

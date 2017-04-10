@@ -7,7 +7,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -96,13 +95,16 @@ public class pizza {
 
         for (int i = 0; i < ingredientes.size(); i++) {
             simple = ingredientes.get(i);
+            if (i !=ingredientes.size()-1){
             precios += precio.getPrecioIngrediente(simple) + "€\n";
-
+            }else{
+                precios +=precio.getPrecioIngrediente(simple) + "€";
+            }
         }
         return precios;
     }
 
-    public String pedido() {//bajo construcción
+    public String pedido() {
         String pedido, ingrediente;
 
         pedido = String.format("%-80s %-4.2f \r\n", descripcionPizza(), precioTipoPizza())
@@ -153,14 +155,17 @@ public class pizza {
                 bw.write(pedido());
 
             } catch (IOException ex2) {
-
+                
             }
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Alerta Pizzeria");
+            alert.setContentText("Pedido guardado correctamente");
+            alert.showAndWait();
         } else {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Alerta Pizzeria");
             alert.setHeaderText("Faltan elementos por seleccionar");
             alert.setContentText("Asegurate de que tienes un tipo y masa de pizza seleccionados");
-
             alert.showAndWait();
         }
     }
