@@ -95,10 +95,10 @@ public class pizza {
 
         for (int i = 0; i < ingredientes.size(); i++) {
             simple = ingredientes.get(i);
-            if (i !=ingredientes.size()-1){
-            precios += precio.getPrecioIngrediente(simple) + "€\n";
-            }else{
-                precios +=precio.getPrecioIngrediente(simple) + "€";
+            if (i != ingredientes.size() - 1) {
+                precios += precio.getPrecioIngrediente(simple) + "€\n";
+            } else {
+                precios += precio.getPrecioIngrediente(simple) + "€";
             }
         }
         return precios;
@@ -153,14 +153,14 @@ public class pizza {
             try (BufferedWriter bw = Files.newBufferedWriter(fichero, StandardOpenOption.CREATE)) {
 
                 bw.write(pedido());
-
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Alerta Pizzeria");
+                alert.setContentText("Pedido guardado correctamente");
+                alert.showAndWait();
             } catch (IOException ex2) {
-                
+
             }
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Alerta Pizzeria");
-            alert.setContentText("Pedido guardado correctamente");
-            alert.showAndWait();
+
         } else {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Alerta Pizzeria");
