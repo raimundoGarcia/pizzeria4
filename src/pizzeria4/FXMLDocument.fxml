@@ -178,12 +178,12 @@
       <Pane fx:id="logo" layoutX="19.0" prefHeight="126.0" prefWidth="157.0" styleClass="logo" stylesheets="@imagenes/pizzas1.css" />
       <Pane fx:id="logo2" layoutX="967.0" layoutY="52.0" prefHeight="213.0" prefWidth="261.0" styleClass="logo2" stylesheets="@imagenes/pizzas1.css">
          <children>
-            <Label fx:id="precioFinal" layoutX="49.0" layoutY="32.0" prefHeight="27.0" prefWidth="62.0" stylesheets="@imagenes/pizzas1.css">
+            <Label fx:id="precioFinal" layoutX="49.0" layoutY="32.0" prefHeight="27.0" prefWidth="62.0" stylesheets="@imagenes/pizzas1.css" textFill="#048002">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="labelEuro" layoutX="62.0" layoutY="51.0" prefHeight="17.0" prefWidth="24.0">
+            <Label fx:id="labelEuro" layoutX="62.0" layoutY="51.0" prefHeight="17.0" prefWidth="24.0" textFill="#048000">
                <font>
                   <Font size="18.0" />
                </font>

@@ -72,9 +72,9 @@ public class precios {
 
         try {
             FileChooser fileChooser = new FileChooser();
-            fileChooser.setTitle("Buscar Archivo");
+            fileChooser.setTitle("Abrir lista de precios");
 
-            fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
+            fileChooser.setInitialDirectory(new File(System.getProperty("user.dir")));
             File archivo = fileChooser.showOpenDialog(null);
             if (archivo != null) {
                 File pathArchivo = new File(archivo.getAbsolutePath());

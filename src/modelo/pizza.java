@@ -136,9 +136,16 @@ public class pizza {
 
     private Path rutaGuardado() {
         Path ruta = null;
+        
         Stage stage = new Stage();
         DirectoryChooser fileChooser = new DirectoryChooser();
         fileChooser.setTitle("Guardar ticket en: ");
+        
+        fileChooser.setInitialDirectory(new File(System.getProperty("user.dir")));
+        File ticket = new File("tickets");
+        if (!ticket.exists()){
+            ticket.mkdirs();
+        }
         File archivo = fileChooser.showDialog(stage);
         if (archivo != null) {
             File pathArchivo = new File(archivo.getAbsolutePath());
